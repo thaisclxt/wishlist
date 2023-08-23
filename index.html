@@ -107,11 +107,13 @@
 						],
 					};
 				},
+
 				computed: {
 					reversedItems() {
 						return [...this.items].reverse();
 					},
 				},
+
 				methods: {
 					saveItem() {
 						this.items.push({
@@ -120,20 +122,22 @@
 							brand: this.newBrand,
 							highPriority: this.newItemHighPriority,
 						});
-						this.newItem = "";
-						this.newBrand = "";
-						this.newItemHighPriority = false;
+						this.resetFields();
 					},
 
 					goNext() {
 						document.getElementById("inputItemBrand").focus();
 					},
 
-					doEdit(editing) {
-						this.editing = editing;
+					resetFields() {
 						this.newItem = "";
 						this.newBrand = "";
-						this.newItemHighPriority = false;
+						this.newItemPriority = false;
+					},
+
+					doEdit(editing) {
+						this.editing = editing;
+						this.resetFields();
 					},
 
 					togglePurchased(item) {
