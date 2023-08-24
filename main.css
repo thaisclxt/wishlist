@@ -89,8 +89,7 @@ li input {
 	justify-content: space-between;
 }
 
-.add-item-form input {
-	width: 70%;
+.add-item-form input[type="text"] {
 	border-radius: 3px;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 	border: 1px solid #f1f5f8;
@@ -99,7 +98,8 @@ li input {
 	box-sizing: border-box;
 	font-size: 1rem;
 	letter-spacing: 0.5px;
-	margin: 0.5rem 0;
+	margin: 0.5rem;
+	outline-color: #606f7b;
 }
 
 .btn {
