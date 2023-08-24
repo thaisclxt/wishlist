@@ -116,6 +116,7 @@
 
 				methods: {
 					saveItem() {
+						if (this.newBrand.length === 0 || this.newItem.length === 0) return;
 						this.items.push({
 							id: this.items.length + 1,
 							label: this.newItem,
