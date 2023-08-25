@@ -108,6 +108,21 @@
 					};
 				},
 
+				mounted() {
+					if (localStorage.getItem("items")) {
+						this.items = JSON.parse(localStorage.getItem("items"));
+					}
+				},
+
+				watch: {
+					items: {
+						handler() {
+							localStorage.setItem("items", JSON.stringify(this.items));
+						},
+						deep: true,
+					},
+				},
+
 				computed: {
 					reversedItems() {
 						return [...this.items].reverse();
